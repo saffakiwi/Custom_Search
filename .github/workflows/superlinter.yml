@@ -34,4 +34,6 @@ jobs:
 
       - name: Code coverage
         uses: codecov/codecov-action@v1.0.12
+        with:
+           token: ${{ secrets.CODECOV_TOKEN }}
 
