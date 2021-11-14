@@ -5,7 +5,7 @@ name: CI
 # In this case the workflow will run on push for master and on pull request for master and develop branches
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   integration:
