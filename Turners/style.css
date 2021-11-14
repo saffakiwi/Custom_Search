@@ -1,12 +1,13 @@
 /* Stylez */
 body {
-    font-family: Franklin Gothic Book, Source Sans Pro, Helvetica Neue, sans-serif; 
+    font-family: Helvetica, sans-serif; 
     margin: 0 auto; 
     background: #ccF2F4; 
     line-height: 1.8em; 
     padding: 12px; 
     box-sizing: border-box; 
-    color: #333;}
+    color: #333;
+}
 body, 
 html {
     height: 100%;
@@ -14,20 +15,21 @@ html {
 
 .wrapper {
     box-sizing: border-box; 
-    background: #F4F9F9; 
+    background: #f4F9F9; 
     box-shadow: 0 0 5px #888; 
     box-shadow: 0 0 5px #888; 
     height: 100%; 
-    overflow: auto; }
-
+    overflow: auto; 
+}
 
 a {
     color: #777; 
     text-decoration: none; 
-    border-bottom: 1px solid #CCFF26;}
+    border-bottom: 1px solid #CCFF26;
+}
 a:hover {
     border-bottom: 1px solid #CCFF26; 
-    color: #222
+    color: #222;
 }
 
 p {
@@ -53,7 +55,7 @@ p {
 
 .meta {
     text-transform: uppercase; 
-    font-family: Courier New, Quicksand, "Helvetica Neue", "Arial", sans-serif; 
+    font-family: "Helvetica Neue", sans-serif; 
     font-size: 11px; 
     letter-spacing: .15em;
 }
@@ -75,12 +77,14 @@ p {
 footer .inline-list li {
     padding-right: 40px;
 }
+
 footer {
     margin: 0 auto; 
     position: absolute; 
     bottom: 0px; 
     padding: 40px 0; 
-    width: 600px;}
+    width: 600px;
+}
 
 label {
     display: block;
