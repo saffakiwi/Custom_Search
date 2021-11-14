@@ -27,8 +27,10 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Run unit tests
-        run: npm run test:unit
+      - uses: actions/checkout@v1
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.3
+
 
       - name: Code coverage
         uses: codecov/codecov-action@v1.0.12
