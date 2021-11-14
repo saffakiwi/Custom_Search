@@ -1,13 +1,11 @@
+const search = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
-var search = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+const replaceWith = '';
 
-var replaceWith = " ";
-
-var x = "er.gh!K,P%r"
+const x = 'er.gh!K,P%r';
 
 function modifyText(x) {
     return result = x.replace(search, replaceWith);
 }
 
-module.exports=modifyText;
-
+module.exports = modifyText;

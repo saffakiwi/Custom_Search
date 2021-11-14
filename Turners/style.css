@@ -1,13 +1,14 @@
 /* Stylez */
 body {
-    font-family: Helvetica, sans-serif; 
+    font-family: 'Helvetica'; 
     margin: 0 auto; 
-    background: #ccF2F4; 
+    background: #ccf2f4; 
     line-height: 1.8em; 
     padding: 12px; 
     box-sizing: border-box; 
     color: #333;
 }
+
 body, 
 html {
     height: 100%;
@@ -15,8 +16,7 @@ html {
 
 .wrapper {
     box-sizing: border-box; 
-    background: #f4F9F9; 
-    box-shadow: 0 0 5px #888; 
+    background: #f4f9f9; 
     box-shadow: 0 0 5px #888; 
     height: 100%; 
     overflow: auto; 
@@ -25,10 +25,10 @@ html {
 a {
     color: #777; 
     text-decoration: none; 
-    border-bottom: 1px solid #CCFF26;
+    border-bottom: 1px solid #ccff26;
 }
 a:hover {
-    border-bottom: 1px solid #CCFF26; 
+    border-bottom: 1px solid #ccff26; 
     color: #222;
 }
 
@@ -39,11 +39,11 @@ p {
 }
 
 .name {
-    font-family: Playfair Display; 
+    font-family: 'Playfair Display'; 
     font-size: 80px; 
     font-weight: 900; 
     padding-bottom: 20px; 
-    color: #0F52BA}
+    color: #0f52ba}
 
 .container {
     margin: 0 auto; 
@@ -60,7 +60,7 @@ p {
     letter-spacing: .15em;
 }
 .meta a:hover {
-    border-bottom: 1px solid #CCFF26; 
+    border-bottom: 1px solid #ccff26; 
     color: #333;
 }
 
@@ -70,6 +70,7 @@ p {
     padding: 0; 
     font-size: 20px;
 }
+
 .inline-list li {
     display: inline-block;
 }
@@ -88,11 +89,10 @@ footer {
 
 label {
     display: block;
-    font: 1rem 'Fira Sans', sans-serif;
+    font: 1rem 'Fira Sans';
 }
 
 input,
 label {
     margin: .4rem 0;
 }
-
