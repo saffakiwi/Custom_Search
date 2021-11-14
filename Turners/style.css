@@ -1,7 +1,7 @@
 /* Stylez */
 body {
   font-family: sans-serif;
-  margin: 0px auto;
+  margin: 0 auto;
   background: #ccf2f4;
   line-height: 1.8em;
   padding: 12px;
@@ -18,7 +18,7 @@ html {
 .wrapper {
   box-sizing: border-box;
   background: #f4f9f9;
-  box-shadow: 0px 0px 5px #888;
+  box-shadow: 0 0 5px #888;
   height: 100%;
   overflow: auto;
 }
@@ -45,7 +45,8 @@ p {
   font-size: 80px;
   font-weight: 900px;
   padding-bottom: 20px;
-  color: #0f52ba}
+  color: #0f52ba;
+}
 
 .container {
   margin: 0 auto;
@@ -69,8 +70,8 @@ p {
 
 .inline-list {
   list-style: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-size: 20px;
 }
 
@@ -83,10 +84,10 @@ footer .inline-list li {
 }
 
 footer {
-  margin: 0px auto;
+  margin: 0 auto;
   position: absolute;
-  bottom: 0px;
-  padding: 40px 0px;
+  bottom: 0;
+  padding: 40px 0;
   width: 600px;
 }
 
@@ -97,5 +98,5 @@ label {
 
 input,
 label {
-  margin: .4rem 0rem;
+  margin: .4rem 0;
 }
