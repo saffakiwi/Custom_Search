@@ -7,33 +7,52 @@ on:
   push:
     branches: [ main ]
 
+env:
+  AZURE_WEBAPP_NAME: turnerssearch   # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '12.x'                # set this to the node version
+
 jobs:
-  build:
-  
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-
+    environment: production
+ 
     steps:
-
-      - name: Checkout master branch
-        uses: actions/checkout@v2
-
-      - name: Cache node_modules
-        uses: actions/cache@v2.1.0
-        with:
-          path: node_modules
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
-
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
-
-      - uses: actions/checkout@v1
-      - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.3
+    - name: Checkout master branch
+      uses: actions/checkout@v2
 
 
-      - name: Code coverage
-        uses: codecov/codecov-action@v1.0.12
-        with:
-           token: ${{ secrets.CODECOV_TOKEN }}
+    - name: Cache node_modules
+      uses: actions/cache@v2.1.0
+      with:
+         path: node_modules       
+         key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
 
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm install
+
+    - uses: actions/checkout@v1
+    - name: Run Jest
+      uses: stefanoeb/jest-action@1.0.3
+
+    - name: Code coverage
+      uses: codecov/codecov-action@v1.0.12
+      with:
+         token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: npm install, build, and test
+      run: |
+          # Build and test the project, then
+          # deploy to Azure Web App.
+          npm install
+          npm run build --if-present
+          npm run test --if-present
+
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@0b651ed7546ecfc75024011f76944cb9b381ef1e
+      with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
